@@ -3,7 +3,7 @@ name: AI 프로덕션 서버 EC2 배포
 on:
   push:
     branches:
-      - main
+      - CICD
   workflow_dispatch:
 
 jobs:
