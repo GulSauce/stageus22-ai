@@ -22,9 +22,11 @@ class GenerateService:
                 "퀴즈 생성 태스크",
                 self.ai_manager.chat,
                 self.quiz_generation_prompt.format(
-                        prompt=request.subject,
+                        subject=request.subject,
                         count=request.count,
-                        reference=searched_result
+                        reference=searched_result,
+                        title=request.title,
+                        content=request.content
                     ),
                 parser
             )

@@ -39,4 +39,3 @@ jobs:
             docker build -t ${{ env.PROJECT_NAME }}:lastest .
             docker run -d --name ${{ env.PROJECT_NAME }} -p 8000:8000 ${{ env.PROJECT_NAME }}:lastest 
             docker image prune -af
-            EOF
