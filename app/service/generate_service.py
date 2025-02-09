@@ -28,7 +28,7 @@ class GenerateService:
                     title=request.title,
                     description=request.description,
                     subject=request.subject,
-                    count=request.count,
+                    count=request.quizCount,
                     reference=searched_result
                 ),
                 parser
@@ -51,7 +51,7 @@ class GenerateService:
                         title=request.title,
                         description=request.description,
                         subject=request.subject,
-                        count=request.count,
+                        count=request.quizCount,
                         reference=searched_result
                     ),
                 parser

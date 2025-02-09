@@ -4,4 +4,4 @@ class GenerateTextQuizRequest(BaseModel):
     title: str
     description: str
     subject: str
-    count: int
+    quizCount: int
