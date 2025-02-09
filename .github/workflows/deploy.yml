@@ -33,10 +33,9 @@ jobs:
             cd /home/ubuntu/${{ env.PROJECT_NAME }}
             git checkout main
             git pull
-            echo "$ENV_CONTENT" | base64 -d > .env
+            echo "${{ env.ENV_CONTENT }}" > .env
             docker stop ${{ env.PROJECT_NAME }}
             docker rm ${{ env.PROJECT_NAME }}
             docker build -t ${{ env.PROJECT_NAME }}:lastest .
             docker run -d --name ${{ env.PROJECT_NAME }} -p 8000:8000 ${{ env.PROJECT_NAME }}:lastest 
             docker image prune -af
-            EOF
