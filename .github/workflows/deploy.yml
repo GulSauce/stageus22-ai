@@ -30,6 +30,7 @@ jobs:
           key: ${{ env.EC2_KEY }}
           debug: true
           script: |
+            cd /home/ubuntu/${{ env.PROJECT_NAME }}
             git checkout main
             git pull
             echo "$ENV_CONTENT" | base64 -d > .env
