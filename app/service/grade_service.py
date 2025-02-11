@@ -15,18 +15,13 @@ class GradeService:
 
         parser = PydanticOutputParser(pydantic_object=GradeTextResponse)
 
-        print(self.quiz_generation_prompt.format(
-                        answers=request.answers,
-                        correct_answer=request.correct_answer,
-                    ))
-
         generated_quiz_has_parsing_format = (
             FunctionExecutionTimeMeasurer.run_function(
                 "주관식 채점 태스크",
                 self.ai_manager.chat,
                 self.quiz_generation_prompt.format(
-                        answers=request.answers,
-                        correct_answer=request.correct_answer,
+                        answers=request.submitAnswers,
+                        correct_answer=request.correctAnswer,
                     ),
                 parser
             )
